@@ -1,7 +1,5 @@
 dnspython
 ffmpeg-python
-flask
-gunicorn
 hachoir
 Pillow
 psutil
