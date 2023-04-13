@@ -40,9 +40,9 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                 [
                     [
                         InlineKeyboardButton(
-                            "📤 To Telegram", callback_data="to_telegram"
+                            "📤 To Telegram 📤", callback_data="to_telegram"
                         ),
-                        InlineKeyboardButton("🌫️ To Drive", callback_data="to_drive"),
+                        InlineKeyboardButton("🌫️ To Drive 🌫️", callback_data="to_drive"),
                     ],
                     [InlineKeyboardButton("⛔ Cancel ⛔", callback_data="cancel")],
                 ]
@@ -72,8 +72,8 @@ async def callback_handler(c: Client, cb: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("👆 Default", callback_data="rename_NO"),
-                        InlineKeyboardButton("✍️ Rename", callback_data="rename_YES"),
+                        InlineKeyboardButton("👆 Default 👆", callback_data="rename_NO"),
+                        InlineKeyboardButton("✍️ Rename ✍️", callback_data="rename_YES"),
                     ],
                     [InlineKeyboardButton("⛔ Cancel ⛔", callback_data="cancel")],
                 ]
@@ -88,8 +88,8 @@ async def callback_handler(c: Client, cb: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🎞️ Video", callback_data="video"),
-                        InlineKeyboardButton("📁 File", callback_data="document"),
+                        InlineKeyboardButton("🎞️ Video 🎞️", callback_data="video"),
+                        InlineKeyboardButton("📁 File 📁", callback_data="document"),
                     ],
                     [InlineKeyboardButton("⛔ Cancel ⛔", callback_data="cancel")],
                 ]
@@ -104,8 +104,8 @@ async def callback_handler(c: Client, cb: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("👆 Default", callback_data="rename_NO"),
-                        InlineKeyboardButton("✍️ Rename", callback_data="rename_YES"),
+                        InlineKeyboardButton("👆 Default 👆", callback_data="rename_NO"),
+                        InlineKeyboardButton("✍️ Rename ✍️", callback_data="rename_YES"),
                     ],
                     [InlineKeyboardButton("⛔ Cancel ⛔", callback_data="cancel")],
                 ]
@@ -120,8 +120,8 @@ async def callback_handler(c: Client, cb: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("👆 Default", callback_data="rename_NO"),
-                        InlineKeyboardButton("✍️ Rename", callback_data="rename_YES"),
+                        InlineKeyboardButton("👆 Default 👆", callback_data="rename_NO"),
+                        InlineKeyboardButton("✍️ Rename ✍️", callback_data="rename_YES"),
                     ],
                     [InlineKeyboardButton("⛔ Cancel ⛔", callback_data="cancel")],
                 ]
@@ -225,15 +225,15 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                         [
                             [
                                 InlineKeyboardButton(
-                                    "❌ Remove",
+                                    "❌ Remove ❌",
                                     callback_data=f"removeFile_{str(m.id)}",
                                 ),
                                 InlineKeyboardButton(
-                                    "📜 Add Subtitle",
+                                    "📜 Add Subtitle 📜",
                                     callback_data=f"addSub_{str(sIndex)}",
                                 ),
                             ],
-                            [InlineKeyboardButton("🔙 Back", callback_data="back")],
+                            [InlineKeyboardButton("🔙 Back 🔙", callback_data="back")],
                         ]
                     ),
                 )
@@ -244,15 +244,15 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                         [
                             [
                                 InlineKeyboardButton(
-                                    "❌ Remove",
+                                    "❌ Remove ❌",
                                     callback_data=f"removeFile_{str(m.id)}",
                                 ),
                                 InlineKeyboardButton(
-                                    "📜 Add Subtitle",
+                                    "📜 Add Subtitle 📜",
                                     callback_data=f"addSub_{str(sIndex)}",
                                 ),
                             ],
-                            [InlineKeyboardButton("🔙 Back", callback_data="back")],
+                            [InlineKeyboardButton("🔙 Back 🔙", callback_data="back")],
                         ]
                     ),
                 )
@@ -267,15 +267,15 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                         [
                             [
                                 InlineKeyboardButton(
-                                    "❌ Remove File",
+                                    "❌ Remove File ❌",
                                     callback_data=f"removeFile_{str(m.id)}",
                                 ),
                                 InlineKeyboardButton(
-                                    "❌ Remove Subtitle",
+                                    "❌ Remove Subtitle ❌",
                                     callback_data=f"removeSub_{str(sIndex)}",
                                 ),
                             ],
-                            [InlineKeyboardButton("🔙 Back", callback_data="back")],
+                            [InlineKeyboardButton("🔙 Back 🔙", callback_data="back")],
                         ]
                     ),
                 )
@@ -286,15 +286,15 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                         [
                             [
                                 InlineKeyboardButton(
-                                    "❌ Remove File",
+                                    "❌ Remove File ❌",
                                     callback_data=f"removeFile_{str(m.id)}",
                                 ),
                                 InlineKeyboardButton(
-                                    "❌ Remove Subtitle",
+                                    "❌ Remove Subtitle ❌",
                                     callback_data=f"removeSub_{str(sIndex)}",
                                 ),
                             ],
-                            [InlineKeyboardButton("🔙 Back", callback_data="back")],
+                            [InlineKeyboardButton("🔙 Back 🔙", callback_data="back")],
                         ]
                     ),
                 )
@@ -309,14 +309,14 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                 [
                     [
                         InlineKeyboardButton(
-                            "🔙 Back", callback_data=f"showFileName_{vMessId}"
+                            "🔙 Back 🔙", callback_data=f"showFileName_{vMessId}"
                         )
                     ]
                 ]
             ),
         )
         subs: Message = await c.listen(
-            cb.message.chat.id, filters="filters.document", timeout=60
+            (cb.message.chat.id,None,None), filters="filters.document", timeout=60
         )
         if subs is not None:
             media = subs.document or subs.video
@@ -327,7 +327,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                         [
                             [
                                 InlineKeyboardButton(
-                                    "🔙 Back", callback_data=f"showFileName_{vMessId}"
+                                    "🔙 Back 🔙", callback_data=f"showFileName_{vMessId}"
                                 )
                             ]
                         ]
@@ -342,7 +342,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                     [
                         [
                             InlineKeyboardButton(
-                                "🔙 Back", callback_data=f"showFileName_{vMessId}"
+                                "🔙 Back 🔙", callback_data=f"showFileName_{vMessId}"
                             )
                         ]
                     ]
@@ -363,7 +363,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                 [
                     [
                         InlineKeyboardButton(
-                            "🔙 Back", callback_data=f"showFileName_{vMessId}"
+                            "🔙 Back 🔙", callback_data=f"showFileName_{vMessId}"
                         )
                     ]
                 ]
