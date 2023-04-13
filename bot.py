@@ -8,8 +8,10 @@ import asyncio
 import os
 import shutil
 import time
+from subprocess import Popen
 
 import psutil
+import pyromod
 from PIL import Image
 from pyrogram import Client, filters,enums
 from pyrogram.errors import (
@@ -25,7 +27,6 @@ from pyrogram.types import (
     Message,
     User,
 )
-from pyromod import listen
 
 from __init__ import (
     AUDIO_EXTENSIONS,
@@ -45,7 +46,6 @@ from __init__ import (
 from config import Config
 from helpers import database
 from helpers.utils import UserSettings, get_readable_file_size, get_readable_time
-from subprocess import Popen
 
 botStartTime = time.time()
 parent_id = Config.GDRIVE_FOLDER_ID
@@ -75,7 +75,7 @@ mergeApp = MergeBot(
     app_version="5.0+mergebot",
 )
 
-Popen("gunicorn app:app", shell=True)
+Popen(f"gunicorn app:app", shell=True)
 
 if os.path.exists("downloads") == False:
     os.makedirs("downloads")
