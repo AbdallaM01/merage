@@ -8,7 +8,6 @@ import asyncio
 import os
 import shutil
 import time
-from subprocess import Popen
 
 import psutil
 import pyromod
@@ -75,7 +74,6 @@ mergeApp = MergeBot(
     app_version="5.0+mergebot",
 )
 
-Popen(f"gunicorn app:app", shell=True)
 
 if os.path.exists("downloads") == False:
     os.makedirs("downloads")
